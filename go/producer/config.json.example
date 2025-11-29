@@ -1,0 +1,24 @@
+{
+  "broker": "kafka:9092",
+  "topic": "input-words",
+  "interval": "2s",
+  "word_list": [
+    "hello",
+    "world",
+    "flink",
+    "kafka",
+    "streaming",
+    "processing",
+    "data",
+    "pipeline",
+    "real-time",
+    "distributed",
+    "scalable",
+    "fault-tolerant",
+    "checkpoint",
+    "recovery",
+    "state",
+    "window"
+  ]
+}
+
