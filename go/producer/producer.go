@@ -125,22 +125,14 @@ func (p *Producer) createKafkaMessage(value string) kafka.Message {
 
 // generateRandomSentence creates a random sentence from the word list
 func (p *Producer) generateRandomSentence() string {
-	wordCount := p.selectRandomWordCount()
-	selectedWords := p.selectRandomWords(wordCount)
-	return strings.Join(selectedWords, " ")
-}
 
-// selectRandomWordCount returns a random number between 1 and 5
-func (p *Producer) selectRandomWordCount() int {
-	return p.rand.Intn(5) + 1
-}
+	wordCount := p.rand.Intn(5) + 1
 
-// selectRandomWords selects random words from the word list
-func (p *Producer) selectRandomWords(count int) []string {
-	words := make([]string, count)
-	for i := 0; i < count; i++ {
+	words := make([]string, wordCount)
+	for i := 0; i < wordCount; i++ {
 		randomIndex := p.rand.Intn(len(p.config.WordList))
 		words[i] = p.config.WordList[randomIndex]
 	}
-	return words
+
+	return strings.Join(words, " ")
 }

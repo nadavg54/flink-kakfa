@@ -1,0 +1,6 @@
+{
+  "broker": "localhost:9092",
+  "topic": "word-count-output",
+  "group_id": "word-count-consumer-group"
+}
+
